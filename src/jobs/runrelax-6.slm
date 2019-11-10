@@ -1,0 +1,13 @@
+#!/bin/sh
+# Account & partition (must have these)
+#SBATCH --account=cm30225
+#SBATCH --partition=teaching
+#SBATCH --mail-type=END
+#SBATCH --mail-user=cjd47@bath.ac.uk
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=cdfixedtest
+time ./sharedrelax -d 5000 -t 1 -p 0.2
+time ./sharedrelax -d 5000 -t 4 -p 0.2
+time ./sharedrelax -d 5000 -t 8 -p 0.2
+time ./sharedrelax -d 5000 -t 16 -p 0.2
